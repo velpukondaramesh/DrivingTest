@@ -6,6 +6,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="30dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:paddingTop="@dimen/activity_vertical_margin"
@@ -20,12 +21,11 @@
             android:id="@+id/fNameLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:paddingLeft="65dp">
+            android:layout_marginTop="10dp">
 
             <EditText
                 android:id="@+id/editName"
-                android:layout_width="240dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/user_name" />
         </android.support.design.widget.TextInputLayout>
@@ -34,12 +34,11 @@
             android:id="@+id/fEmailLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:paddingLeft="65dp">
+            android:layout_marginTop="10dp">
 
             <EditText
                 android:id="@+id/editEmail"
-                android:layout_width="240dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/email_id" />
         </android.support.design.widget.TextInputLayout>
@@ -48,12 +47,11 @@
             android:id="@+id/fPasswordLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:paddingLeft="65dp">
+            android:layout_marginTop="10dp">
 
             <EditText
                 android:id="@+id/editPassword"
-                android:layout_width="240dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/password" />
         </android.support.design.widget.TextInputLayout>
@@ -64,16 +62,22 @@
             android:layout_marginTop="10dp"
             android:text="Submit" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content">
 
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="bottom"
+            android:foregroundGravity="bottom"
             ads:adSize="BANNER"
             ads:adUnitId="@string/banner_ad_unit_id"></com.google.android.gms.ads.AdView>
-
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
+
