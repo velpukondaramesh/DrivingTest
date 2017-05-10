@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context="com.example.ramesh.drivingtest.MainActivity">
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -22,13 +24,16 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="18dp"
             android:layout_marginRight="18dp"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:theme="@style/AppTheme">
 
             <EditText
                 android:id="@+id/editEmail"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/email_id"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/colorAccent"
                 android:textColorHint="@color/colorPrimary" />
         </android.support.design.widget.TextInputLayout>
 
@@ -45,6 +50,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/password"
+                android:textColor="@color/colorAccent"
                 android:textColorHint="@color/colorPrimary" />
         </android.support.design.widget.TextInputLayout>
 
