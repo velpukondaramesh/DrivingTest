@@ -1,54 +1,46 @@
 package com.example.ramesh.drivingtest;
 
-import android.content.res.Configuration;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.ramesh.mysample.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
-import static android.support.design.R.styleable.View;
-
-public class MainActivity extends AppCompatActivity {
+public class Login_Activity extends AppCompatActivity {
 
     EditText et_UserName, et_Password;
+    Button btn_signin, btn_signup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        setContentView(R.layout.activity_login);
 
         et_UserName = (EditText) findViewById(R.id.editEmail);
         et_Password = (EditText) findViewById(R.id.editPassword);
+
+        btn_signin = (Button) findViewById(R.id.btn_signin);
+        btn_signup = (Button) findViewById(R.id.btn_signup);
 
         final AdView mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        /*et_UserName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-
+        btn_signup.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-
-                mAdView.setVisibility(hasFocus ? android.view.View.INVISIBLE : android.view.View.VISIBLE);
-
+            public void onClick(View v) {
+                Intent in=new Intent(Login_Activity.this,Registration_Activity.class);
+                startActivity(in);
+                finish();
             }
         });
-
-        et_Password.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-
-                mAdView.setVisibility(hasFocus ? android.view.View.INVISIBLE : android.view.View.VISIBLE);
-
-            }
-        });*/
     }
 
     @Override
