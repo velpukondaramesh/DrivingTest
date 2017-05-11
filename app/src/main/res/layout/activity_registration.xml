@@ -64,6 +64,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <Button
+            android:id="@+id/btn_signup"
             android:layout_width="133dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -73,6 +74,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/layad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">

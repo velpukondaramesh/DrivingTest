@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 
 import com.example.ramesh.mysample.R;
 import com.google.android.gms.ads.AdRequest;
@@ -17,6 +18,7 @@ public class Login_Activity extends AppCompatActivity {
 
     EditText et_UserName, et_Password;
     Button btn_signin, btn_signup;
+    //private AdView adView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,16 +31,18 @@ public class Login_Activity extends AppCompatActivity {
         btn_signin = (Button) findViewById(R.id.btn_signin);
         btn_signup = (Button) findViewById(R.id.btn_signup);
 
-        final AdView mAdView = (AdView) findViewById(R.id.adView);
+        /*final AdView mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+        mAdView.loadAd(adRequest);*/
+
+        MyAdView.SetAD((AdView)findViewById(R.id.adView));
 
         btn_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in=new Intent(Login_Activity.this,Registration_Activity.class);
+                Intent in = new Intent(Login_Activity.this, Registration_Activity.class);
                 startActivity(in);
-                finish();
+                //finish();
             }
         });
     }
@@ -65,5 +69,9 @@ public class Login_Activity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
+    @Override
+    protected void onResume() {
+        MyAdView.SetAD((AdView)findViewById(R.id.adView));
+        super.onResume();
+    }
 }
